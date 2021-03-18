@@ -599,13 +599,7 @@
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">38</span>
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">39</span>
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">40</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">41</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">42</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">43</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">44</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">45</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">46</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">47</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #e6db74">&#39;&#39;&#39;</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">41</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #e6db74">&#39;&#39;&#39;</span>
 <span style="color: #e6db74">Copyright (c) 2019, NVIDIA CORPORATION. All rights reserved.</span>
 
 <span style="color: #e6db74">NVIDIA CORPORATION and its licensors retain all intellectual property</span>
@@ -621,30 +615,24 @@
 <span style="color: #75715e"># A Python codelet for proportional control</span>
 <span style="color: #75715e"># For comparison, please see the same logic in C++ at &quot;PingCpp.cpp&quot;.</span>
 <span style="color: #75715e">#</span>
-<span style="color: #75715e"># We receive odometry information, from which we extract the x position. Then, u</span>
-<span style="color: #f8f8f2">sing</span> <span style="color: #f8f8f2">refence</span> <span style="color: #f92672">and</span>
-<span style="color: #75715e"># gain parameters that are provided by the user, we compute and publish a linear</span>
- <span style="color: #f8f8f2">speed</span> <span style="color: #f8f8f2">command</span>
+<span style="color: #75715e"># We receive odometry information, from which we extract the x position. Then, using refence and</span>
+<span style="color: #75715e"># gain parameters that are provided by the user, we compute and publish a linear speed command</span>
 <span style="color: #75715e"># using `control = gain * (reference - position)`</span>
 <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">PingPython</span><span style="color: #f8f8f2">(Codelet):</span>
     <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">start</span><span style="color: #f8f8f2">(self):</span>
         <span style="color: #75715e"># This part will be run once in the beginning of the program</span>
-        <span style="color: #75715e"># We can tick periodically, on every message, or blocking. See documenta</span>
-<span style="color: #f8f8f2">tion</span> <span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">details</span><span style="color: #f92672">.</span>
+        <span style="color: #75715e"># We can tick periodically, on every message, or blocking. See documentation for details.</span>
         <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">tick_periodically(</span><span style="color: #ae81ff">1.0</span><span style="color: #f8f8f2">)</span>
 
     <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">tick</span><span style="color: #f8f8f2">(self):</span>
-        <span style="color: #75715e"># This part will be run at every tick. We are ticking periodically in th</span>
-<span style="color: #f92672">is</span> <span style="color: #f8f8f2">example</span><span style="color: #f92672">.</span>
+        <span style="color: #75715e"># This part will be run at every tick. We are ticking periodically in th is example.</span>
 
-        <span style="color: #75715e"># Print out message to console. The message is set in ping_python.app.js</span>
-<span style="color: #f8f8f2">on</span> <span style="color: #f8f8f2">file</span><span style="color: #f92672">.</span>
+        <span style="color: #75715e"># Print out message to console. The message is set in ping_python.app.js on file.</span>
         <span style="color: #f8f8f2">print(self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">config</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">message)</span>
 
 
 <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">main</span><span style="color: #f8f8f2">():</span>
-    <span style="color: #f8f8f2">app</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">Application(app_filename</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;apps/tutorials/ping_python/ping_python.app.j</span>
-<span style="color: #f8f8f2">son</span><span style="color: #e6db74">&quot;)</span>
+    <span style="color: #f8f8f2">app</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">Application(app_filename</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;apps/tutorials/ping_python/ping_python.app.json&quot;</span><span style="color: #f8f8f2">)</span>
     <span style="color: #f8f8f2">app</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">load_module(</span><span style="color: #e6db74">&quot;sight&quot;</span><span style="color: #f8f8f2">)</span>
     <span style="color: #f8f8f2">app</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">nodes[</span><span style="color: #e6db74">&quot;ping_node&quot;</span><span style="color: #f8f8f2">]</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">add(PingPython)</span>
     <span style="color: #f8f8f2">app</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">run()</span>
