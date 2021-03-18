@@ -597,11 +597,7 @@
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">34</span>
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">35</span>
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">36</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">37</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">38</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">39</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">40</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">41</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #e6db74">&#39;&#39;&#39;</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">37</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #e6db74">&#39;&#39;&#39;</span>
 <span style="color: #e6db74">Copyright (c) 2019, NVIDIA CORPORATION. All rights reserved.</span>
 
 <span style="color: #e6db74">NVIDIA CORPORATION and its licensors retain all intellectual property</span>
@@ -612,7 +608,6 @@
 <span style="color: #e6db74">&#39;&#39;&#39;</span>
 
 <span style="color: #f92672">from</span> <span style="color: #f8f8f2">isaac</span> <span style="color: #f92672">import</span> <span style="color: #f92672">*</span>
-
 
 <span style="color: #75715e"># A Python codelet for proportional control</span>
 <span style="color: #75715e"># For comparison, please see the same logic in C++ at &quot;PingCpp.cpp&quot;.</span>
@@ -628,17 +623,14 @@
 
     <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">tick</span><span style="color: #f8f8f2">(self):</span>
         <span style="color: #75715e"># This part will be run at every tick. We are ticking periodically in th is example.</span>
-
         <span style="color: #75715e"># Print out message to console. The message is set in ping_python.app.js on file.</span>
         <span style="color: #f8f8f2">print(self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">config</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">message)</span>
-
 
 <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">main</span><span style="color: #f8f8f2">():</span>
     <span style="color: #f8f8f2">app</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">Application(app_filename</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;apps/tutorials/ping_python/ping_python.app.json&quot;</span><span style="color: #f8f8f2">)</span>
     <span style="color: #f8f8f2">app</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">load_module(</span><span style="color: #e6db74">&quot;sight&quot;</span><span style="color: #f8f8f2">)</span>
     <span style="color: #f8f8f2">app</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">nodes[</span><span style="color: #e6db74">&quot;ping_node&quot;</span><span style="color: #f8f8f2">]</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">add(PingPython)</span>
     <span style="color: #f8f8f2">app</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">run()</span>
-
 
 <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">__name__</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&#39;__main__&#39;</span><span style="color: #f8f8f2">:</span>
     <span style="color: #f8f8f2">main()</span>
