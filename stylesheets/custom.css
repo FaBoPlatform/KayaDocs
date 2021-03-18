@@ -5,23 +5,27 @@ body {
 .md-typeset pre {
   color: #ffffff;
 }
+
 .md-typeset .highlighttable {
   margin-left:-20px;
   margin-right: -20px;
   border-radius: 0;
 }
+
 .md-typeset .highlighttable > * {
-  --md-code-bg-color: #666 !important;
+  --md-code-bg-color: #000 !important;
 }
+
 .md-typeset .highlighttable .linenos .linenodiv pre span {
-  background-color: #aaa !important;
-  color: #ffffff !important;
+  background-color: #000 !important;
+  color: #999 !important;
   margin: 0;
 }
 
 .md-typeset .codehilitetable .md-clipboard:before {
   color: rgba(240,240,240,.8);
 }
+
 .md-typeset .codehilitetable .md-clipboard:hover:before {
   color: rgba(102,217,224,1);
 }
