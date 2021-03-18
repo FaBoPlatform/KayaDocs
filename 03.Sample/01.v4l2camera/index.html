@@ -14,7 +14,7 @@
     
     
       
-        <title>Ping_Python - FaBo Kaya Docs</title>
+        <title>v4l2_camera - FaBo Kaya Docs</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ping_python" class="md-skip">
+        <a href="#v4l2_camera" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Ping_Python
+              v4l2_camera
             
           </span>
         </div>
@@ -315,12 +315,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Ping_Python
+          v4l2_camera
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Ping_Python
+        v4l2_camera
       </a>
       
         
@@ -471,7 +471,7 @@
               
                 
                 
-                <h1 id="ping_python">Ping_Python</h1>
+                <h1 id="v4l2_camera">v4l2_camera</h1>
 <h2 id="buildpc">Build(PC)</h2>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">cd ~/isaac/sdk</span>
@@ -537,76 +537,145 @@
 <span style="color: #f8f8f2">)</span>
 </code></pre></div>
 </td></tr></table></p>
-<p><code>json hl_lines=3
-{
-  "name": "v4l2_camera",
-  "modules": [
-    "sensors:v4l2_camera",
-    "sight",
-    "viewers"
-  ],
-  "graph": {
-    "nodes": [
-      {
-        "name": "camera",
-        "components": [
-          {
-            "name": "MessageLedger",
-            "type": "isaac::alice::MessageLedger"
-          },
-          {
-            "name": "V4L2Camera",
-            "type": "isaac::V4L2Camera"
-          }
-        ]
-      },
-      {
-        "name": "viewer",
-        "components": [
-          {
-            "name": "MessageLedger",
-            "type": "isaac::alice::MessageLedger"
-          },
-          {
-            "name": "ImageViewer",
-            "type": "isaac::viewers::ImageViewer"
-          }
-        ]
-      }
-    ],
-    "edges": [
-      {
-        "source": "camera/V4L2Camera/frame",
-        "target": "viewer/ImageViewer/image"
-      }
-    ]
-  },
-  "config": {
-    "camera": {
-      "V4L2Camera": {
-        "device_id": 0,
-        "rows": 448,
-        "cols": 800,
-        "rate_hz": 20
-      }
-    },
-    "websight": {
-      "WebsightServer": {
-        "port": 3000,
-        "ui_config": {
-          "windows": {
-            "Camera": {
-              "renderer": "2d",
-              "channels": [
-                { "name": "v4l2_camera/viewer/ImageViewer/image" }
-              ]
-            }
-          }
-        }
-      }
-    }
-  }
-}</code></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 1</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 2</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 3</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 4</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 5</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 6</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 7</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 8</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 9</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">10</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">11</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">12</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">13</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">14</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">15</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">16</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">17</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">18</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">19</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">20</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">21</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">22</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">23</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">24</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">25</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">26</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">27</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">28</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">29</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">30</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">31</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">32</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">33</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">34</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">35</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">36</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">37</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">38</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">39</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">40</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">41</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">42</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">43</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">44</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">45</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">46</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">47</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">48</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">49</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">50</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">51</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">52</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">53</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">54</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">55</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">56</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">57</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">58</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">59</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">60</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">61</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">62</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">63</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">64</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">65</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">66</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">67</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">68</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">69</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #f8f8f2">{</span>
+  <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;v4l2_camera&quot;</span><span style="color: #f8f8f2">,</span>
+  <span style="color: #f92672">&quot;modules&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">[</span>
+    <span style="color: #e6db74">&quot;sensors:v4l2_camera&quot;</span><span style="color: #f8f8f2">,</span>
+    <span style="color: #e6db74">&quot;sight&quot;</span><span style="color: #f8f8f2">,</span>
+    <span style="color: #e6db74">&quot;viewers&quot;</span>
+  <span style="color: #f8f8f2">],</span>
+  <span style="color: #f92672">&quot;graph&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
+    <span style="color: #f92672">&quot;nodes&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">[</span>
+      <span style="color: #f8f8f2">{</span>
+        <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;camera&quot;</span><span style="color: #f8f8f2">,</span>
+        <span style="color: #f92672">&quot;components&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">[</span>
+          <span style="color: #f8f8f2">{</span>
+            <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;MessageLedger&quot;</span><span style="color: #f8f8f2">,</span>
+            <span style="color: #f92672">&quot;type&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;isaac::alice::MessageLedger&quot;</span>
+          <span style="color: #f8f8f2">},</span>
+          <span style="color: #f8f8f2">{</span>
+            <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;V4L2Camera&quot;</span><span style="color: #f8f8f2">,</span>
+            <span style="color: #f92672">&quot;type&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;isaac::V4L2Camera&quot;</span>
+          <span style="color: #f8f8f2">}</span>
+        <span style="color: #f8f8f2">]</span>
+      <span style="color: #f8f8f2">},</span>
+      <span style="color: #f8f8f2">{</span>
+        <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;viewer&quot;</span><span style="color: #f8f8f2">,</span>
+        <span style="color: #f92672">&quot;components&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">[</span>
+          <span style="color: #f8f8f2">{</span>
+            <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;MessageLedger&quot;</span><span style="color: #f8f8f2">,</span>
+            <span style="color: #f92672">&quot;type&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;isaac::alice::MessageLedger&quot;</span>
+          <span style="color: #f8f8f2">},</span>
+          <span style="color: #f8f8f2">{</span>
+            <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;ImageViewer&quot;</span><span style="color: #f8f8f2">,</span>
+            <span style="color: #f92672">&quot;type&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;isaac::viewers::ImageViewer&quot;</span>
+          <span style="color: #f8f8f2">}</span>
+        <span style="color: #f8f8f2">]</span>
+      <span style="color: #f8f8f2">}</span>
+    <span style="color: #f8f8f2">],</span>
+    <span style="color: #f92672">&quot;edges&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">[</span>
+      <span style="color: #f8f8f2">{</span>
+        <span style="color: #f92672">&quot;source&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;camera/V4L2Camera/frame&quot;</span><span style="color: #f8f8f2">,</span>
+        <span style="color: #f92672">&quot;target&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;viewer/ImageViewer/image&quot;</span>
+      <span style="color: #f8f8f2">}</span>
+    <span style="color: #f8f8f2">]</span>
+  <span style="color: #f8f8f2">},</span>
+  <span style="color: #f92672">&quot;config&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
+    <span style="color: #f92672">&quot;camera&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
+      <span style="color: #f92672">&quot;V4L2Camera&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
+        <span style="color: #f92672">&quot;device_id&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">,</span>
+        <span style="color: #f92672">&quot;rows&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">448</span><span style="color: #f8f8f2">,</span>
+        <span style="color: #f92672">&quot;cols&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">800</span><span style="color: #f8f8f2">,</span>
+        <span style="color: #f92672">&quot;rate_hz&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">20</span>
+      <span style="color: #f8f8f2">}</span>
+    <span style="color: #f8f8f2">},</span>
+    <span style="color: #f92672">&quot;websight&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
+      <span style="color: #f92672">&quot;WebsightServer&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
+        <span style="color: #f92672">&quot;port&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">3000</span><span style="color: #f8f8f2">,</span>
+        <span style="color: #f92672">&quot;ui_config&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
+          <span style="color: #f92672">&quot;windows&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
+            <span style="color: #f92672">&quot;Camera&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
+              <span style="color: #f92672">&quot;renderer&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;2d&quot;</span><span style="color: #f8f8f2">,</span>
+              <span style="color: #f92672">&quot;channels&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">[</span>
+                <span style="color: #f8f8f2">{</span> <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;v4l2_camera/viewer/ImageViewer/image&quot;</span> <span style="color: #f8f8f2">}</span>
+              <span style="color: #f8f8f2">]</span>
+            <span style="color: #f8f8f2">}</span>
+          <span style="color: #f8f8f2">}</span>
+        <span style="color: #f8f8f2">}</span>
+      <span style="color: #f8f8f2">}</span>
+    <span style="color: #f8f8f2">}</span>
+  <span style="color: #f8f8f2">}</span>
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+</td></tr></table>
                 
               
               
