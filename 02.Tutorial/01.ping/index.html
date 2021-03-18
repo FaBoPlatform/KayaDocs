@@ -316,8 +316,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#source" class="md-nav__link">
-    Source
+  <a href="#sourcepc" class="md-nav__link">
+    Source(PC)
   </a>
   
 </li>
@@ -424,8 +424,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#source" class="md-nav__link">
-    Source
+  <a href="#sourcepc" class="md-nav__link">
+    Source(PC)
   </a>
   
 </li>
@@ -445,25 +445,22 @@
                 
                 <h1 id="ping_python">Ping_Python</h1>
 <h2 id="buildpc">Build(PC)</h2>
+<p><img alt="" src="../img/PC.png" /></p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">cd ~/isaac/sdk</span>
 <span style="color: #66d9ef">bazel build //apps/tutorials/ping_python</span>
 </code></pre></div>
 </td></tr></table>
 <h2 id="deploypc">Deploy(PC)</h2>
+<p><img alt="" src="../img/PC.png" /></p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">cd ~/isaac/sdk</span>
 <span style="color: #66d9ef">./../engine/engine/build/deploy.sh --remote_user jetson -p //apps/tutorials/ping_python:ping_python-pkg -d jetpack44 -h JetsonのIPアドレス</span>
 </code></pre></div>
 </td></tr></table>
 <h2 id="runjetson">RUN(Jetson)</h2>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">3</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">4</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">sudo pip3 install pkgconf</span>
-<span style="color: #66d9ef">sudo pip3 install Cython</span>
-<span style="color: #66d9ef">sudo pip3 install pycapnp</span>
-<span style="color: #66d9ef">sudo pip3 install numpy-quaternion</span>
+<p><img alt="" src="../img/jetson.png" /></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">sudo pip3 install pkgconf, Cython, pycapnp, numpy-quaternion</span>
 </code></pre></div>
 </td></tr></table>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
@@ -471,7 +468,8 @@
 <span style="color: #66d9ef">./run apps/tutorials/ping_python/ping_python.py</span>
 </code></pre></div>
 </td></tr></table>
-<h2 id="source">Source</h2>
+<h2 id="sourcepc">Source(PC)</h2>
+<p><img alt="" src="../img/PC.png" /></p>
 <p>BUILD
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 1</span>
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 2</span>
