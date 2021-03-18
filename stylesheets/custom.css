@@ -21,11 +21,3 @@ body {
   color: #999 !important;
   margin: 0;
 }
-
-.md-typeset .codehilitetable .md-clipboard:before {
-  color: rgba(240,240,240,.8);
-}
-
-.md-typeset .codehilitetable .md-clipboard:hover:before {
-  color: rgba(102,217,224,1);
-}
