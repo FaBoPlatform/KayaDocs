@@ -44,6 +44,12 @@
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+      <link rel="stylesheet" href="../../stylesheets/custom.css">
+    
     
       
     
@@ -202,18 +208,6 @@
             
   
   
-  
-    <li class="md-nav__item">
-      <a href="../00.jetson/" class="md-nav__link">
-        Jetson Nano 4GBの設定
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
     
   
   
@@ -247,8 +241,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#docker" class="md-nav__link">
-    Dockerの構築
+  <a href="#isaac-sdk" class="md-nav__link">
+    Isaac SDKのダウンロード
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    依存の解消
   </a>
   
 </li>
@@ -257,6 +258,18 @@
   
 </nav>
       
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02.jetson/" class="md-nav__link">
+        Jetson Nano 4GBの設定
+      </a>
     </li>
   
 
@@ -292,8 +305,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#docker" class="md-nav__link">
-    Dockerの構築
+  <a href="#isaac-sdk" class="md-nav__link">
+    Isaac SDKのダウンロード
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    依存の解消
   </a>
   
 </li>
@@ -312,14 +332,12 @@
                 
                 
                 <h1 id="desktop">連携Desktopの環境構築</h1>
-<h2 id="docker">Dockerの構築</h2>
-<p>isaac SDKをダウンロードし、PCに展開します。</p>
-<div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_61s5fv099monur4 checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_61s5fv099monur4-panel role=tab><label for=tab-group-0-0_61s5fv099monur4 class=code-tab-label data-lang id=tab-group-0-0_61s5fv099monur4-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_61s5fv099monur4-panel aria-labelledby=tab-group-0-0_61s5fv099monur4-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code>cd ~/isaac/sdk
-</code></pre></div></td></tr></table></div><input name=tab-group-0 type=radio id=tab-group-0-1_nsqj4coq2k82s05 class=code-tab data-lang aria-controls=tab-group-0-1_nsqj4coq2k82s05-panel role=tab><label for=tab-group-0-1_nsqj4coq2k82s05 class=code-tab-label data-lang id=tab-group-0-1_nsqj4coq2k82s05-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-1_nsqj4coq2k82s05-panel aria-labelledby=tab-group-0-1_nsqj4coq2k82s05-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=cp>../engine/engine/build/docker/install_docker.sh</span>
-</code></pre></div></td></tr></table></div><input name=tab-group-0 type=radio id=tab-group-0-2_j0wtxmty6ffq3tz class=code-tab data-lang aria-controls=tab-group-0-2_j0wtxmty6ffq3tz-panel role=tab><label for=tab-group-0-2_j0wtxmty6ffq3tz class=code-tab-label data-lang id=tab-group-0-2_j0wtxmty6ffq3tz-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-2_j0wtxmty6ffq3tz-panel aria-labelledby=tab-group-0-2_j0wtxmty6ffq3tz-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=cp>../engine/engine/build/docker/create_image.sh</span>
-</code></pre></div></td></tr></table></div><input name=tab-group-0 type=radio id=tab-group-0-3_6eghwmshdjtg3ug class=code-tab data-lang aria-controls=tab-group-0-3_6eghwmshdjtg3ug-panel role=tab><label for=tab-group-0-3_6eghwmshdjtg3ug class=code-tab-label data-lang id=tab-group-0-3_6eghwmshdjtg3ug-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-3_6eghwmshdjtg3ug-panel aria-labelledby=tab-group-0-3_6eghwmshdjtg3ug-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=n>docker</span> <span class=n>run</span> <span class=o>--</span><span class=n>mount</span> <span class=k>source</span><span class=o>=</span><span class=n>isaac</span><span class=o>-</span><span class=n>sdk</span><span class=o>-</span><span class=n>build</span><span class=o>-</span><span class=k>cache</span><span class=p>,</span><span class=n>target</span><span class=o>=/</span><span class=n>root</span> <span class=o>-</span><span class=n>v</span> <span class="n n-Quoted">`pwd`</span><span class=o>:/</span><span class=n>src</span><span class=o>/</span><span class=n>workspace</span> <span class=o>-</span><span class=n>w</span> <span class=o>/</span><span class=n>src</span><span class=o>/</span><span class=n>workspace</span> <span class=o>--</span><span class=n>runtime</span><span class=o>=</span><span class=n>nvidia</span> <span class=o>-</span><span class=n>it</span> <span class=n>isaacbuild</span><span class=o>:</span><span class=n>latest</span> <span class=o>/</span><span class=n>bin</span><span class=o>/</span><span class=n>bash</span>
-</code></pre></div></td></tr></table></div><input name=tab-group-0 type=radio id=tab-group-0-4_3r8x9ykeign7lfk class=code-tab data-lang aria-controls=tab-group-0-4_3r8x9ykeign7lfk-panel role=tab><label for=tab-group-0-4_3r8x9ykeign7lfk class=code-tab-label data-lang id=tab-group-0-4_3r8x9ykeign7lfk-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-4_3r8x9ykeign7lfk-panel aria-labelledby=tab-group-0-4_3r8x9ykeign7lfk-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code>bazel build ...
-</code></pre></div></td></tr></table></div></div>
+<h2 id="isaac-sdk">Isaac SDKのダウンロード</h2>
+<p><a href="https://developer.nvidia.com/isaac/downloads">https://developer.nvidia.com/isaac/downloads</a> のページからSDKをダウンロードしてきます。</p>
+<h2 id="_1">依存の解消</h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">bob</span><span class="nv">@desktop</span><span class="err">:</span><span class="o">~/</span><span class="n">isaac</span><span class="o">/</span><span class="n">engine</span><span class="o">/</span><span class="err">$</span><span class="w"> </span><span class="p">.</span><span class="o">/</span><span class="n">engine</span><span class="o">/</span><span class="n">build</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">install_dependencies</span><span class="p">.</span><span class="n">sh</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
                 
               
               
@@ -337,7 +355,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="フッター">
       
-        <a href="../00.jetson/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../../00.%E6%9B%B4%E6%96%B0%E5%B1%A5%E6%AD%B4/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -346,11 +364,25 @@
               <span class="md-footer__direction">
                 前
               </span>
-              Jetson Nano 4GBの設定
+              更新履歴
             </div>
           </div>
         </a>
       
+      
+        <a href="../02.jetson/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                次
+              </span>
+              Jetson Nano 4GBの設定
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
       
     </nav>
   
