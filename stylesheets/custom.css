@@ -11,10 +11,10 @@ body {
   border-radius: 0;
 }
 .md-typeset .highlighttable > * {
-  --md-code-bg-color: #222 !important;
+  --md-code-bg-color: #666 !important;
 }
 .md-typeset .highlighttable .linenos .linenodiv pre span {
-  background-color: #222 !important;
+  background-color: #666 !important;
   color: #ffffff !important;
   margin: 0;
 }
