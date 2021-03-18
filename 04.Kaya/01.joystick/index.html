@@ -14,7 +14,7 @@
     
     
       
-        <title>v4l2_camera - FaBo Kaya Docs</title>
+        <title>joystick - FaBo Kaya Docs</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#v4l2_camera" class="md-skip">
+        <a href="#joystick" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              v4l2_camera
+              joystick
             
           </span>
         </div>
@@ -281,14 +281,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
       
       <label class="md-nav__link" for="__nav_5">
         03.Sample
@@ -298,6 +296,50 @@
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           03.Sample
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03.Sample/01.v4l2camera/" class="md-nav__link">
+        v4l2_camera
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      <label class="md-nav__link" for="__nav_6">
+        04.Kaya
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="04.Kaya" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          04.Kaya
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -315,12 +357,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          v4l2_camera
+          joystick
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        v4l2_camera
+        joystick
       </a>
       
         
@@ -365,13 +407,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pc_1" class="md-nav__link">
-    操作(PC)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#sourcepc" class="md-nav__link">
     Source(PC)
   </a>
@@ -382,48 +417,6 @@
   
 </nav>
       
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
-      
-      <label class="md-nav__link" for="__nav_6">
-        04.Kaya
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="04.Kaya" data-md-level="1">
-        <label class="md-nav__title" for="__nav_6">
-          <span class="md-nav__icon md-icon"></span>
-          04.Kaya
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../04.Kaya/01.joystick/" class="md-nav__link">
-        joystick
-      </a>
     </li>
   
 
@@ -487,13 +480,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pc_1" class="md-nav__link">
-    操作(PC)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#sourcepc" class="md-nav__link">
     Source(PC)
   </a>
@@ -513,77 +499,34 @@
               
                 
                 
-                <h1 id="v4l2_camera">v4l2_camera</h1>
+                <h1 id="joystick">joystick</h1>
 <h2 id="buildpc">Build(PC)</h2>
 <p><img alt="" src="../img/PC.png" /></p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">cd ~/isaac/sdk</span>
-<span style="color: #66d9ef">bazel build //apps/samples/v4l2_camera</span>
+<span style="color: #66d9ef">bazel build //apps/kaya:joystick</span>
 </code></pre></div>
 </td></tr></table>
 <h2 id="deploypc">Deploy(PC)</h2>
 <p><img alt="" src="../img/PC.png" /></p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">cd ~/isaac/sdk</span>
-<span style="color: #66d9ef">./../engine/engine/build/deploy.sh --remote_user Jetsonのユーザ名 -p //apps/samples/v4l2_camera:v4l2_camera-pkg -d jetpack44 -h JetsonのIPアドレス</span>
+<span style="color: #66d9ef">./../engine/engine/build/deploy.sh --remote_user Jetsonのユーザ名 -p //apps/kaya:joystick-pkg -d jetpack44 -h JetsonのIPアドレス</span>
 </code></pre></div>
 </td></tr></table>
 <h2 id="runjetson">RUN(Jetson)</h2>
 <p><img alt="" src="../img/jetson.png" /></p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">cd /home/jetson/deploy/jetson/v4l2_camera-pkg</span>
-<span style="color: #66d9ef">apps/samples/v4l2_camera/v4l2_camera</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">cd /home/jetson/deploy/jetson/joystick-pkg</span>
+<span style="color: #66d9ef">apps/kaya/joystick</span>
 </code></pre></div>
 </td></tr></table>
 <h2 id="pc">接続(PC)</h2>
 <p><img alt="" src="../img/PC.png" /></p>
 <p><code>http://jetsonのipアドレス:3000</code></p>
-<h2 id="pc_1">操作(PC)</h2>
-<p><img alt="" src="../img/PC.png" /></p>
-<p><img alt="" src="../img/camera001.jpg" /></p>
 <h2 id="sourcepc">Source(PC)</h2>
-<p>BUILD
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 1</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 2</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 3</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 4</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 5</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 6</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 7</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 8</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 9</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">10</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">11</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">12</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">13</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">14</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">15</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">16</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">17</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">18</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">19</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">20</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #e6db74">&quot;&quot;&quot;</span>
-<span style="color: #f8f8f2">Copyright</span> <span style="color: #f8f8f2">(c)</span> <span style="color: #ae81ff">2019</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">NVIDIA</span> <span style="color: #f8f8f2">CORPORATION.</span> <span style="color: #f8f8f2">All</span> <span style="color: #f8f8f2">rights</span> <span style="color: #f8f8f2">reserved.</span>
-
-<span style="color: #f8f8f2">NVIDIA</span> <span style="color: #f8f8f2">CORPORATION</span> <span style="color: #f8f8f2">and</span> <span style="color: #f8f8f2">its</span> <span style="color: #f8f8f2">licensors</span> <span style="color: #f8f8f2">retain</span> <span style="color: #f8f8f2">all</span> <span style="color: #f8f8f2">intellectual</span> <span style="color: #f8f8f2">property</span>
-<span style="color: #f8f8f2">and</span> <span style="color: #f8f8f2">proprietary</span> <span style="color: #f8f8f2">rights</span> <span style="color: #f8f8f2">in</span> <span style="color: #f8f8f2">and</span> <span style="color: #f8f8f2">to</span> <span style="color: #f8f8f2">this</span> <span style="color: #f8f8f2">software,</span> <span style="color: #f8f8f2">related</span> <span style="color: #f8f8f2">documentation</span>
-<span style="color: #f8f8f2">and</span> <span style="color: #f8f8f2">any</span> <span style="color: #f8f8f2">modifications</span> <span style="color: #f8f8f2">thereto.</span> <span style="color: #f8f8f2">Any</span> <span style="color: #f8f8f2">use,</span> <span style="color: #f8f8f2">reproduction,</span> <span style="color: #f8f8f2">disclosure</span> <span style="color: #f8f8f2">or</span>
-<span style="color: #f8f8f2">distribution</span> <span style="color: #f8f8f2">of</span> <span style="color: #f8f8f2">this</span> <span style="color: #f8f8f2">software</span> <span style="color: #f8f8f2">and</span> <span style="color: #f8f8f2">related</span> <span style="color: #f8f8f2">documentation</span> <span style="color: #f8f8f2">without</span> <span style="color: #f8f8f2">an</span> <span style="color: #f8f8f2">express</span>
-<span style="color: #f8f8f2">license</span> <span style="color: #f8f8f2">agreement</span> <span style="color: #f8f8f2">from</span> <span style="color: #f8f8f2">NVIDIA</span> <span style="color: #f8f8f2">CORPORATION</span> <span style="color: #f8f8f2">is</span> <span style="color: #f8f8f2">strictly</span> <span style="color: #f8f8f2">prohibited.</span>
-<span style="color: #e6db74">&quot;&quot;&quot;</span>
-
-<span style="color: #f8f8f2">load(</span><span style="color: #e6db74">&quot;//bzl:module.bzl&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&quot;isaac_app&quot;</span><span style="color: #f8f8f2">)</span>
-
-<span style="color: #f8f8f2">isaac_app(</span>
-    <span style="color: #f8f8f2">name</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;v4l2_camera&quot;</span><span style="color: #f8f8f2">,</span>
-    <span style="color: #f8f8f2">modules</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">[</span>
-        <span style="color: #e6db74">&quot;sensors:v4l2_camera&quot;</span><span style="color: #f8f8f2">,</span>
-        <span style="color: #e6db74">&quot;sight&quot;</span><span style="color: #f8f8f2">,</span>
-        <span style="color: #e6db74">&quot;viewers&quot;</span><span style="color: #f8f8f2">,</span>
-    <span style="color: #f8f8f2">],</span>
-<span style="color: #f8f8f2">)</span>
-</code></pre></div>
-</td></tr></table></p>
+<p><img alt="" src="../img/PC.png" /></p>
+<p>joystick.app.json
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 1</span>
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 2</span>
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 3</span>
@@ -622,107 +565,47 @@
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">36</span>
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">37</span>
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">38</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">39</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">40</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">41</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">42</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">43</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">44</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">45</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">46</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">47</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">48</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">49</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">50</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">51</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">52</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">53</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">54</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">55</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">56</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">57</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">58</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">59</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">60</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">61</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">62</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">63</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">64</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">65</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">66</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">67</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">68</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">69</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #f8f8f2">{</span>
-  <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;v4l2_camera&quot;</span><span style="color: #f8f8f2">,</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">39</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #f8f8f2">{</span>
+  <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;joystick&quot;</span><span style="color: #f8f8f2">,</span>
   <span style="color: #f92672">&quot;modules&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">[</span>
-    <span style="color: #e6db74">&quot;sensors:v4l2_camera&quot;</span><span style="color: #f8f8f2">,</span>
-    <span style="color: #e6db74">&quot;sight&quot;</span><span style="color: #f8f8f2">,</span>
-    <span style="color: #e6db74">&quot;viewers&quot;</span>
+    <span style="color: #e6db74">&quot;sight&quot;</span>
   <span style="color: #f8f8f2">],</span>
+  <span style="color: #f92672">&quot;config&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
+    <span style="color: #f92672">&quot;odometry.odometry&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
+      <span style="color: #f92672">&quot;HolonomicBaseWheelImuOdometry&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
+        <span style="color: #f92672">&quot;use_imu&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #66d9ef">false</span>
+      <span style="color: #f8f8f2">}</span>
+    <span style="color: #f8f8f2">}</span>
+  <span style="color: #f8f8f2">},</span>
   <span style="color: #f92672">&quot;graph&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
     <span style="color: #f92672">&quot;nodes&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">[</span>
       <span style="color: #f8f8f2">{</span>
-        <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;camera&quot;</span><span style="color: #f8f8f2">,</span>
-        <span style="color: #f92672">&quot;components&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">[</span>
-          <span style="color: #f8f8f2">{</span>
-            <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;MessageLedger&quot;</span><span style="color: #f8f8f2">,</span>
-            <span style="color: #f92672">&quot;type&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;isaac::alice::MessageLedger&quot;</span>
-          <span style="color: #f8f8f2">},</span>
-          <span style="color: #f8f8f2">{</span>
-            <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;V4L2Camera&quot;</span><span style="color: #f8f8f2">,</span>
-            <span style="color: #f92672">&quot;type&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;isaac::V4L2Camera&quot;</span>
-          <span style="color: #f8f8f2">}</span>
-        <span style="color: #f8f8f2">]</span>
+        <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;odometry&quot;</span><span style="color: #f8f8f2">,</span>
+        <span style="color: #f92672">&quot;subgraph&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;packages/navigation/apps/holonomic_base_imu_odometry.subgraph.json&quot;</span>
       <span style="color: #f8f8f2">},</span>
       <span style="color: #f8f8f2">{</span>
-        <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;viewer&quot;</span><span style="color: #f8f8f2">,</span>
-        <span style="color: #f92672">&quot;components&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">[</span>
-          <span style="color: #f8f8f2">{</span>
-            <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;MessageLedger&quot;</span><span style="color: #f8f8f2">,</span>
-            <span style="color: #f92672">&quot;type&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;isaac::alice::MessageLedger&quot;</span>
-          <span style="color: #f8f8f2">},</span>
-          <span style="color: #f8f8f2">{</span>
-            <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;ImageViewer&quot;</span><span style="color: #f8f8f2">,</span>
-            <span style="color: #f92672">&quot;type&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;isaac::viewers::ImageViewer&quot;</span>
-          <span style="color: #f8f8f2">}</span>
-        <span style="color: #f8f8f2">]</span>
+        <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;2d_kaya&quot;</span><span style="color: #f8f8f2">,</span>
+        <span style="color: #f92672">&quot;subgraph&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;apps/kaya/2d_kaya.subgraph.json&quot;</span>
+      <span style="color: #f8f8f2">},</span>
+      <span style="color: #f8f8f2">{</span>
+        <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;commander&quot;</span><span style="color: #f8f8f2">,</span>
+        <span style="color: #f92672">&quot;subgraph&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;packages/navigation/apps/holonomic_base_commander.subgraph.json&quot;</span>
       <span style="color: #f8f8f2">}</span>
     <span style="color: #f8f8f2">],</span>
     <span style="color: #f92672">&quot;edges&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">[</span>
       <span style="color: #f8f8f2">{</span>
-        <span style="color: #f92672">&quot;source&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;camera/V4L2Camera/frame&quot;</span><span style="color: #f8f8f2">,</span>
-        <span style="color: #f92672">&quot;target&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;viewer/ImageViewer/image&quot;</span>
+        <span style="color: #f92672">&quot;source&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;2d_kaya.subgraph/interface/base_state&quot;</span><span style="color: #f8f8f2">,</span>
+        <span style="color: #f92672">&quot;target&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;odometry.subgraph/interface/state&quot;</span>
+      <span style="color: #f8f8f2">},</span>
+      <span style="color: #f8f8f2">{</span>
+        <span style="color: #f92672">&quot;source&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;commander.subgraph/interface/command&quot;</span><span style="color: #f8f8f2">,</span>
+        <span style="color: #f92672">&quot;target&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;2d_kaya.subgraph/interface/base_command&quot;</span>
       <span style="color: #f8f8f2">}</span>
     <span style="color: #f8f8f2">]</span>
-  <span style="color: #f8f8f2">},</span>
-  <span style="color: #f92672">&quot;config&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
-    <span style="color: #f92672">&quot;camera&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
-      <span style="color: #f92672">&quot;V4L2Camera&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
-        <span style="color: #f92672">&quot;device_id&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">,</span>
-        <span style="color: #f92672">&quot;rows&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">448</span><span style="color: #f8f8f2">,</span>
-        <span style="color: #f92672">&quot;cols&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">800</span><span style="color: #f8f8f2">,</span>
-        <span style="color: #f92672">&quot;rate_hz&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">20</span>
-      <span style="color: #f8f8f2">}</span>
-    <span style="color: #f8f8f2">},</span>
-    <span style="color: #f92672">&quot;websight&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
-      <span style="color: #f92672">&quot;WebsightServer&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
-        <span style="color: #f92672">&quot;port&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">3000</span><span style="color: #f8f8f2">,</span>
-        <span style="color: #f92672">&quot;ui_config&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
-          <span style="color: #f92672">&quot;windows&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
-            <span style="color: #f92672">&quot;Camera&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
-              <span style="color: #f92672">&quot;renderer&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;2d&quot;</span><span style="color: #f8f8f2">,</span>
-              <span style="color: #f92672">&quot;channels&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">[</span>
-                <span style="color: #f8f8f2">{</span> <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;v4l2_camera/viewer/ImageViewer/image&quot;</span> <span style="color: #f8f8f2">}</span>
-              <span style="color: #f8f8f2">]</span>
-            <span style="color: #f8f8f2">}</span>
-          <span style="color: #f8f8f2">}</span>
-        <span style="color: #f8f8f2">}</span>
-      <span style="color: #f8f8f2">}</span>
-    <span style="color: #f8f8f2">}</span>
   <span style="color: #f8f8f2">}</span>
 <span style="color: #f8f8f2">}</span>
 </code></pre></div>
-</td></tr></table>
+</td></tr></table></p>
                 
               
               
@@ -740,7 +623,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="フッター">
       
-        <a href="../../02.Tutorial/01.ping/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../../03.Sample/01.v4l2camera/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -749,25 +632,11 @@
               <span class="md-footer__direction">
                 前
               </span>
-              Ping_Python
+              v4l2_camera
             </div>
           </div>
         </a>
       
-      
-        <a href="../../04.Kaya/01.joystick/" class="md-footer__link md-footer__link--next" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                次
-              </span>
-              joystick
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
       
     </nav>
   
