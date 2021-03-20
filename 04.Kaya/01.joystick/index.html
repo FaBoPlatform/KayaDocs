@@ -227,6 +227,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01.Setting/03.hardware/" class="md-nav__link">
+        Hardware Setting
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -415,6 +427,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    ハードウェアの設定
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#buildpc" class="md-nav__link">
     Build(PC)
   </a>
@@ -438,6 +457,20 @@
         <li class="md-nav__item">
   <a href="#pc" class="md-nav__link">
     接続(PC)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#joystick_1" class="md-nav__link">
+    Joystickの接続
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    操作
   </a>
   
 </li>
@@ -488,6 +521,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    ハードウェアの設定
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#buildpc" class="md-nav__link">
     Build(PC)
   </a>
@@ -516,6 +556,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#joystick_1" class="md-nav__link">
+    Joystickの接続
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    操作
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#sourcepc" class="md-nav__link">
     Source(PC)
   </a>
@@ -536,6 +590,56 @@
                 
                 
                 <h1 id="joystick">joystick</h1>
+<h2 id="_1">ハードウェアの設定</h2>
+<p>dunamixelsの項目を修正</p>
+<table>
+<thead>
+<tr>
+<th align="left">パラメーター</th>
+<th align="left">値</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">port</td>
+<td align="left">/dev/ttyUSB0</td>
+</tr>
+<tr>
+<td align="left">servo_model</td>
+<td align="left">XC430</td>
+</tr>
+<tr>
+<td align="left">baudrate</td>
+<td align="left">k57600</td>
+</tr>
+</tbody>
+</table>
+<p>~/isaac/sdk/apps/kaya/kaya_hardware.subgraph.json
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 1</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 2</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 3</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 4</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 5</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 6</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 7</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 8</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 9</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">10</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">11</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">12</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>  <span style="color: #f92672">&quot;dynamixels&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
+      <span style="color: #f92672">&quot;driver&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
+        <span style="color: #f92672">&quot;tick_period&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;50 Hz&quot;</span><span style="color: #f8f8f2">,</span>
+        <span style="color: #f92672">&quot;port&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;/dev/ttyUSB0&quot;</span><span style="color: #f8f8f2">,</span>
+        <span style="color: #f92672">&quot;servo_model&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;XC430&quot;</span><span style="color: #f8f8f2">,</span>
+        <span style="color: #f92672">&quot;baudrate&quot;</span><span style="color: #f8f8f2">:</span><span style="color: #e6db74">&quot;k57600&quot;</span><span style="color: #f8f8f2">,</span>
+        <span style="color: #f92672">&quot;servo_ids&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">[</span><span style="color: #ae81ff">3</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">2</span><span style="color: #f8f8f2">]</span>
+      <span style="color: #f8f8f2">},</span>
+      <span style="color: #f92672">&quot;isaac.alice.Failsafe&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
+        <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;robot_failsafe&quot;</span>
+      <span style="color: #f8f8f2">}</span>
+    <span style="color: #f8f8f2">},</span>
+</code></pre></div>
+</td></tr></table></p>
 <h2 id="buildpc">Build(PC)</h2>
 <p><img alt="" src="../img/PC.png" /></p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
@@ -560,6 +664,14 @@
 <h2 id="pc">接続(PC)</h2>
 <p><img alt="" src="../img/PC.png" /></p>
 <p><code>http://jetsonのipアドレス:3000</code></p>
+<h2 id="joystick_1">Joystickの接続</h2>
+<p><img alt="" src="../img/PC.png" /></p>
+<p>F710のUSBドングルをKayaに差し込んで、下記操作を実施。</p>
+<p><img alt="" src="../img/joystick001.jpg" /></p>
+<p><img alt="" src="../img/joystick002.jpg" /></p>
+<h2 id="_2">操作</h2>
+<p><img alt="" src="../img/joystick003.jpg" /></p>
+<p>LBボタンを押すと車輪が周り始める。その後、十字キーで操作。</p>
 <h2 id="sourcepc">Source(PC)</h2>
 <p><img alt="" src="../img/PC.png" /></p>
 <p>joystick.app.json
