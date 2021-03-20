@@ -14,7 +14,7 @@
     
     
       
-        <title>imu - FaBo Kaya Docs</title>
+        <title>Realsense - FaBo Kaya Docs</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#imu" class="md-skip">
+        <a href="#realsense" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              imu
+              Realsense
             
           </span>
         </div>
@@ -328,6 +328,18 @@
             
   
   
+  
+    <li class="md-nav__item">
+      <a href="../03.imu-caliburation/" class="md-nav__link">
+        imu
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
     
   
   
@@ -339,12 +351,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          imu
+          Realsense
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        imu
+        Realsense
       </a>
       
         
@@ -406,18 +418,6 @@
   
 </nav>
       
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../04.realsense/" class="md-nav__link">
-        Realsense
-      </a>
     </li>
   
 
@@ -549,33 +549,33 @@
               
                 
                 
-                <h1 id="imu">imu</h1>
+                <h1 id="realsense">Realsense</h1>
 <h2 id="buildpc">Build(PC)</h2>
 <p><img alt="" src="../img/PC.png" /></p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">cd ~/isaac/sdk</span>
-<span style="color: #66d9ef">bazel build //apps/samples/imu</span>
+<span style="color: #66d9ef">bazel build //apps/samples/realsense_camera</span>
 </code></pre></div>
 </td></tr></table>
 <h2 id="deploypc">Deploy(PC)</h2>
 <p><img alt="" src="../img/PC.png" /></p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">cd ~/isaac/sdk</span>
-<span style="color: #66d9ef">./../engine/engine/build/deploy.sh --remote_user Jetsonのユーザ名 -p //apps/samples/imu:imu-pkg -d jetpack44 -h JetsonのIPアドレス</span>
+<span style="color: #66d9ef">./../engine/engine/build/deploy.sh --remote_user Jetsonのユーザ名 -p //apps/samples/realsense_camera:realsense_camera-pkg -d jetpack44 -h JetsonのIPアドレス</span>
 </code></pre></div>
 </td></tr></table>
 <h2 id="runjetson">RUN(Jetson)</h2>
 <p><img alt="" src="../img/jetson.png" /></p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">cd /home/jetson/deploy/jetson/imu-pkg</span>
-<span style="color: #66d9ef">apps/samples/imu/imu</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">cd /home/jetson/deploy/jetson/realsense_camera-pkg</span>
+<span style="color: #66d9ef">apps/samples/realsense_camera/realsense_camera</span>
 </code></pre></div>
 </td></tr></table>
 <h2 id="pc">接続(PC)</h2>
 <p><img alt="" src="../img/PC.png" /></p>
 <p><code>http://jetsonのipアドレス:3000</code></p>
 <h2 id="jetson">操作(Jetson)</h2>
-<p><code>deploy/jetson/imu_calibration-pkg/apps/samples/imu_calibration/imu_calibration.out.json</code>にキャリブレーションの値が出力される。</p>
+<p><img alt="" src="./img/realsense001.png" /></p>
 <h2 id="sourcepc">Source(PC)</h2>
 <p>BUILD
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 1</span>
@@ -597,7 +597,20 @@
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">17</span>
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">18</span>
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">19</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">20</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #e6db74">&quot;&quot;&quot;</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">20</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">21</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">22</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">23</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">24</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">25</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">26</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">27</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">28</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">29</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">30</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">31</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">32</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">33</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #e6db74">&quot;&quot;&quot;</span>
 <span style="color: #f8f8f2">Copyright</span> <span style="color: #f8f8f2">(c)</span> <span style="color: #ae81ff">2019</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">NVIDIA</span> <span style="color: #f8f8f2">CORPORATION.</span> <span style="color: #f8f8f2">All</span> <span style="color: #f8f8f2">rights</span> <span style="color: #f8f8f2">reserved.</span>
 
 <span style="color: #f8f8f2">NVIDIA</span> <span style="color: #f8f8f2">CORPORATION</span> <span style="color: #f8f8f2">and</span> <span style="color: #f8f8f2">its</span> <span style="color: #f8f8f2">licensors</span> <span style="color: #f8f8f2">retain</span> <span style="color: #f8f8f2">all</span> <span style="color: #f8f8f2">intellectual</span> <span style="color: #f8f8f2">property</span>
@@ -610,23 +623,29 @@
 <span style="color: #f8f8f2">load(</span><span style="color: #e6db74">&quot;//bzl:module.bzl&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&quot;isaac_app&quot;</span><span style="color: #f8f8f2">)</span>
 
 <span style="color: #f8f8f2">isaac_app(</span>
-    <span style="color: #f8f8f2">name</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;imu&quot;</span><span style="color: #f8f8f2">,</span>
-    <span style="color: #f8f8f2">app_json_file</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;imu.app.json&quot;</span><span style="color: #f8f8f2">,</span>
+    <span style="color: #f8f8f2">name</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;realsense_camera&quot;</span><span style="color: #f8f8f2">,</span>
+    <span style="color: #f8f8f2">app_json_file</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;realsense_camera.app.json&quot;</span><span style="color: #f8f8f2">,</span>
     <span style="color: #f8f8f2">modules</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">[</span>
-        <span style="color: #e6db74">&quot;imu&quot;</span><span style="color: #f8f8f2">,</span>
+        <span style="color: #e6db74">&quot;realsense&quot;</span><span style="color: #f8f8f2">,</span>
+        <span style="color: #e6db74">&quot;rgbd_processing&quot;</span><span style="color: #f8f8f2">,</span>
         <span style="color: #e6db74">&quot;sight&quot;</span><span style="color: #f8f8f2">,</span>
+        <span style="color: #e6db74">&quot;viewers&quot;</span><span style="color: #f8f8f2">,</span>
+    <span style="color: #f8f8f2">],</span>
+<span style="color: #f8f8f2">)</span>
+
+<span style="color: #f8f8f2">isaac_app(</span>
+    <span style="color: #f8f8f2">name</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;realsense_multicam&quot;</span><span style="color: #f8f8f2">,</span>
+    <span style="color: #f8f8f2">app_json_file</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;realsense_multicam.app.json&quot;</span><span style="color: #f8f8f2">,</span>
+    <span style="color: #f8f8f2">modules</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">[</span>
+        <span style="color: #e6db74">&quot;realsense&quot;</span><span style="color: #f8f8f2">,</span>
+        <span style="color: #e6db74">&quot;rgbd_processing&quot;</span><span style="color: #f8f8f2">,</span>
+        <span style="color: #e6db74">&quot;sight&quot;</span><span style="color: #f8f8f2">,</span>
+        <span style="color: #e6db74">&quot;viewers&quot;</span><span style="color: #f8f8f2">,</span>
     <span style="color: #f8f8f2">],</span>
 <span style="color: #f8f8f2">)</span>
 </code></pre></div>
 </td></tr></table></p>
-<p>OWNER
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">3</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #960050; background-color: #1e0010">i</span><span style="color: #66d9ef">n</span><span style="color: #960050; background-color: #1e0010">heri</span><span style="color: #66d9ef">te</span><span style="color: #960050; background-color: #1e0010">d</span><span style="color: #f8f8f2">:</span> <span style="color: #66d9ef">true</span>
-<span style="color: #960050; background-color: #1e0010">ow</span><span style="color: #66d9ef">ners</span><span style="color: #f8f8f2">:</span>
-<span style="color: #ae81ff">-</span> <span style="color: #960050; background-color: #1e0010">Ce</span><span style="color: #66d9ef">n</span><span style="color: #960050; background-color: #1e0010">k</span> <span style="color: #960050; background-color: #1e0010">Oguz</span> <span style="color: #960050; background-color: #1e0010">Saglam</span>
-</code></pre></div>
-</td></tr></table></p>
+<p>realsense_camera.app.jspn
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">  1</span>
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">  2</span>
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">  3</span>
@@ -803,17 +822,94 @@
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">174</span>
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">175</span>
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">176</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">177</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #f8f8f2">{</span>
-  <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;imu&quot;</span><span style="color: #f8f8f2">,</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">177</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">178</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">179</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">180</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">181</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">182</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">183</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">184</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">185</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">186</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">187</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">188</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">189</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">190</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">191</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">192</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">193</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">194</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">195</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">196</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">197</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">198</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">199</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">200</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">201</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">202</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">203</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">204</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">205</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">206</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">207</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">208</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">209</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">210</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">211</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">212</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">213</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">214</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">215</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">216</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">217</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">218</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #f8f8f2">{</span>
+  <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;realsense_camera&quot;</span><span style="color: #f8f8f2">,</span>
   <span style="color: #f92672">&quot;modules&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">[</span>
-    <span style="color: #e6db74">&quot;imu&quot;</span><span style="color: #f8f8f2">,</span>
-    <span style="color: #e6db74">&quot;sight&quot;</span>
+    <span style="color: #e6db74">&quot;realsense&quot;</span><span style="color: #f8f8f2">,</span>
+    <span style="color: #e6db74">&quot;rgbd_processing&quot;</span><span style="color: #f8f8f2">,</span>
+    <span style="color: #e6db74">&quot;sight&quot;</span><span style="color: #f8f8f2">,</span>
+    <span style="color: #e6db74">&quot;viewers&quot;</span>
   <span style="color: #f8f8f2">],</span>
   <span style="color: #f92672">&quot;config&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
-    <span style="color: #f92672">&quot;imu&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
-      <span style="color: #f92672">&quot;iio_bmi160&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
-        <span style="color: #f92672">&quot;i2c_device_id&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">,</span>
-        <span style="color: #f92672">&quot;tick_period&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;100Hz&quot;</span>
+    <span style="color: #f92672">&quot;camera&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
+      <span style="color: #f92672">&quot;realsense&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
+        <span style="color: #f92672">&quot;rows&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">360</span><span style="color: #f8f8f2">,</span>
+        <span style="color: #f92672">&quot;cols&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">640</span><span style="color: #f8f8f2">,</span>
+        <span style="color: #f92672">&quot;depth_framerate&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">15</span><span style="color: #f8f8f2">,</span>
+        <span style="color: #f92672">&quot;ir_framerate&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">15</span><span style="color: #f8f8f2">,</span>
+        <span style="color: #f92672">&quot;rgb_framerate&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">30</span><span style="color: #f8f8f2">,</span>
+        <span style="color: #f92672">&quot;enable_depth&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #66d9ef">true</span><span style="color: #f8f8f2">,</span>
+        <span style="color: #f92672">&quot;enable_ir_stereo&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #66d9ef">true</span><span style="color: #f8f8f2">,</span>
+        <span style="color: #f92672">&quot;enable_rgb&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #66d9ef">true</span><span style="color: #f8f8f2">,</span>
+        <span style="color: #f92672">&quot;enable_depth_laser&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #66d9ef">false</span><span style="color: #f8f8f2">,</span>
+        <span style="color: #f92672">&quot;align_to_color&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #66d9ef">false</span><span style="color: #f8f8f2">,</span>
+        <span style="color: #f92672">&quot;frame_queue_size&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">2</span><span style="color: #f8f8f2">,</span>
+        <span style="color: #f92672">&quot;auto_exposure_priority&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #66d9ef">false</span>
+      <span style="color: #f8f8f2">}</span>
+    <span style="color: #f8f8f2">},</span>
+    <span style="color: #f92672">&quot;viewer&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
+      <span style="color: #f92672">&quot;color&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
+        <span style="color: #f92672">&quot;reduce_scale&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">2</span>
+      <span style="color: #f8f8f2">},</span>
+      <span style="color: #f92672">&quot;depth&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
+        <span style="color: #f92672">&quot;reduce_scale&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">2</span><span style="color: #f8f8f2">,</span>
+        <span style="color: #f92672">&quot;min_visualization_depth&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">0.2</span><span style="color: #f8f8f2">,</span>
+        <span style="color: #f92672">&quot;max_visualization_depth&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">5.0</span><span style="color: #f8f8f2">,</span>
+        <span style="color: #f92672">&quot;camera_name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;Realsense&quot;</span><span style="color: #f8f8f2">,</span>
+        <span style="color: #f92672">&quot;colormap&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">[</span>
+          <span style="color: #f8f8f2">[</span><span style="color: #ae81ff">128</span><span style="color: #f8f8f2">,</span>   <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">,</span>   <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">],</span>
+          <span style="color: #f8f8f2">[</span><span style="color: #ae81ff">255</span><span style="color: #f8f8f2">,</span>   <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">,</span>   <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">],</span>
+          <span style="color: #f8f8f2">[</span><span style="color: #ae81ff">255</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">255</span><span style="color: #f8f8f2">,</span>   <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">],</span>
+          <span style="color: #f8f8f2">[</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">,</span>   <span style="color: #ae81ff">255</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">255</span><span style="color: #f8f8f2">],</span>
+          <span style="color: #f8f8f2">[</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">,</span>     <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">255</span><span style="color: #f8f8f2">],</span>
+          <span style="color: #f8f8f2">[</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">,</span>     <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">128</span><span style="color: #f8f8f2">]</span>
+        <span style="color: #f8f8f2">]</span>
+      <span style="color: #f8f8f2">}</span>
+    <span style="color: #f8f8f2">},</span>
+    <span style="color: #f92672">&quot;point_cloud&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
+      <span style="color: #f92672">&quot;depth_to_pointcloud&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
+        <span style="color: #f92672">&quot;use_color&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #66d9ef">true</span>
       <span style="color: #f8f8f2">}</span>
     <span style="color: #f8f8f2">},</span>
     <span style="color: #f92672">&quot;websight&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
@@ -821,167 +917,172 @@
         <span style="color: #f92672">&quot;port&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">3000</span><span style="color: #f8f8f2">,</span>
         <span style="color: #f92672">&quot;ui_config&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
           <span style="color: #f92672">&quot;windows&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
-            <span style="color: #f92672">&quot;imu - CorrectedAngularVelocity&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
-              <span style="color: #f92672">&quot;renderer&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;plot&quot;</span><span style="color: #f8f8f2">,</span>
+            <span style="color: #f92672">&quot;Realsense - Left IR&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
+              <span style="color: #f92672">&quot;renderer&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;2d&quot;</span><span style="color: #f8f8f2">,</span>
               <span style="color: #f92672">&quot;dims&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
-                <span style="color: #f92672">&quot;width&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">600</span><span style="color: #f8f8f2">,</span>
-                <span style="color: #f92672">&quot;height&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">600</span>
-              <span style="color: #f8f8f2">},</span>
+                <span style="color: #f92672">&quot;width&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">640</span><span style="color: #f8f8f2">,</span>
+                <span style="color: #f92672">&quot;height&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">360</span>
+                              <span style="color: #f8f8f2">},</span>
               <span style="color: #f92672">&quot;channels&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">[</span>
                 <span style="color: #f8f8f2">{</span>
-                  <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;imu/imu/imu_corrector/CorrectedAngularVelocity.x&quot;</span>
-                <span style="color: #f8f8f2">},</span>
-                <span style="color: #f8f8f2">{</span>
-                  <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;imu/imu/imu_corrector/CorrectedAngularVelocity.y&quot;</span>
-                <span style="color: #f8f8f2">},</span>
-                <span style="color: #f8f8f2">{</span>
-                  <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;imu/imu/imu_corrector/CorrectedAngularVelocity.z&quot;</span>
+                  <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;realsense_camera/viewer/left_ir/image&quot;</span>
                 <span style="color: #f8f8f2">}</span>
               <span style="color: #f8f8f2">]</span>
             <span style="color: #f8f8f2">},</span>
-            <span style="color: #f92672">&quot;imu - CorrectedLinearAcceleration&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
-              <span style="color: #f92672">&quot;renderer&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;plot&quot;</span><span style="color: #f8f8f2">,</span>
+            <span style="color: #f92672">&quot;Realsense - Right IR&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
+              <span style="color: #f92672">&quot;renderer&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;2d&quot;</span><span style="color: #f8f8f2">,</span>
               <span style="color: #f92672">&quot;dims&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
-                <span style="color: #f92672">&quot;width&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">600</span><span style="color: #f8f8f2">,</span>
-                <span style="color: #f92672">&quot;height&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">600</span>
+                <span style="color: #f92672">&quot;width&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">640</span><span style="color: #f8f8f2">,</span>
+                <span style="color: #f92672">&quot;height&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">360</span>
               <span style="color: #f8f8f2">},</span>
               <span style="color: #f92672">&quot;channels&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">[</span>
                 <span style="color: #f8f8f2">{</span>
-                  <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;imu/imu/imu_corrector/CorrectedLinearAcceleration.x&quot;</span>
-                <span style="color: #f8f8f2">},</span>
-                <span style="color: #f8f8f2">{</span>
-                  <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;imu/imu/imu_corrector/CorrectedLinearAcceleration.y&quot;</span>
-                <span style="color: #f8f8f2">},</span>
-                <span style="color: #f8f8f2">{</span>
-                  <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;imu/imu/imu_corrector/CorrectedLinearAcceleration.z&quot;</span>
+                  <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;realsense_camera/viewer/right_ir/image&quot;</span>
                 <span style="color: #f8f8f2">}</span>
               <span style="color: #f8f8f2">]</span>
             <span style="color: #f8f8f2">},</span>
-            <span style="color: #f92672">&quot;imu - RawAngularVelocity&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
-              <span style="color: #f92672">&quot;renderer&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;plot&quot;</span><span style="color: #f8f8f2">,</span>
+            <span style="color: #f92672">&quot;Realsense - Color&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
+              <span style="color: #f92672">&quot;renderer&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;2d&quot;</span><span style="color: #f8f8f2">,</span>
               <span style="color: #f92672">&quot;dims&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
-                <span style="color: #f92672">&quot;width&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">600</span><span style="color: #f8f8f2">,</span>
-                <span style="color: #f92672">&quot;height&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">600</span>
-            <span style="color: #f8f8f2">},</span>
-              <span style="color: #f92672">&quot;channels&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">[</span>
-                <span style="color: #f8f8f2">{</span>
-                  <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;imu/imu/imu_corrector/RawAngularVelocity.x&quot;</span>
-                <span style="color: #f8f8f2">},</span>
-                <span style="color: #f8f8f2">{</span>
-                  <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;imu/imu/imu_corrector/RawAngularVelocity.y&quot;</span>
-                <span style="color: #f8f8f2">},</span>
-                <span style="color: #f8f8f2">{</span>
-                  <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;imu/imu/imu_corrector/RawAngularVelocity.z&quot;</span>
-                <span style="color: #f8f8f2">}</span>
-              <span style="color: #f8f8f2">]</span>
-            <span style="color: #f8f8f2">},</span>
-            <span style="color: #f92672">&quot;imu - RawLinearAcceleration&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
-              <span style="color: #f92672">&quot;renderer&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;plot&quot;</span><span style="color: #f8f8f2">,</span>
-              <span style="color: #f92672">&quot;dims&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
-                <span style="color: #f92672">&quot;width&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">600</span><span style="color: #f8f8f2">,</span>
-                <span style="color: #f92672">&quot;height&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">600</span>
+                <span style="color: #f92672">&quot;width&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">640</span><span style="color: #f8f8f2">,</span>
+                <span style="color: #f92672">&quot;height&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">360</span>
               <span style="color: #f8f8f2">},</span>
               <span style="color: #f92672">&quot;channels&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">[</span>
                 <span style="color: #f8f8f2">{</span>
-                  <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;imu/imu/imu_corrector/RawLinearAcceleration.x&quot;</span>
-                <span style="color: #f8f8f2">},</span>
-                <span style="color: #f8f8f2">{</span>
-                  <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;imu/imu/imu_corrector/RawLinearAcceleration.y&quot;</span>
-                <span style="color: #f8f8f2">},</span>
-                <span style="color: #f8f8f2">{</span>
-                  <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;imu/imu/imu_corrector/RawLinearAcceleration.z&quot;</span>
+                  <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;realsense_camera/viewer/color/image&quot;</span>
                 <span style="color: #f8f8f2">}</span>
               <span style="color: #f8f8f2">]</span>
             <span style="color: #f8f8f2">},</span>
-            <span style="color: #f92672">&quot;imu - BiasLinearAcceleration&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
-              <span style="color: #f92672">&quot;renderer&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;plot&quot;</span><span style="color: #f8f8f2">,</span>
+            <span style="color: #f92672">&quot;Realsense - Depth&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
+              <span style="color: #f92672">&quot;renderer&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;2d&quot;</span><span style="color: #f8f8f2">,</span>
               <span style="color: #f92672">&quot;dims&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
-                <span style="color: #f92672">&quot;width&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">600</span><span style="color: #f8f8f2">,</span>
-                <span style="color: #f92672">&quot;height&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">600</span>
+                <span style="color: #f92672">&quot;width&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">640</span><span style="color: #f8f8f2">,</span>
+                <span style="color: #f92672">&quot;height&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">360</span>
               <span style="color: #f8f8f2">},</span>
               <span style="color: #f92672">&quot;channels&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">[</span>
                 <span style="color: #f8f8f2">{</span>
-                  <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;imu/imu/imu_corrector/BiasLinearAcceleration.x&quot;</span>
-                <span style="color: #f8f8f2">},</span>
-                <span style="color: #f8f8f2">{</span>
-                  <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;imu/imu/imu_corrector/BiasLinearAcceleration.y&quot;</span>
-                <span style="color: #f8f8f2">},</span>
-                <span style="color: #f8f8f2">{</span>
-                  <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;imu/imu/imu_corrector/BiasLinearAcceleration.z&quot;</span>
+                  <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;realsense_camera/viewer/depth/Depth&quot;</span>
                 <span style="color: #f8f8f2">}</span>
               <span style="color: #f8f8f2">]</span>
             <span style="color: #f8f8f2">},</span>
-            <span style="color: #f92672">&quot;imu - BiasAngularVelocity&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
-              <span style="color: #f92672">&quot;renderer&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;plot&quot;</span><span style="color: #f8f8f2">,</span>
+            <span style="color: #f92672">&quot;Realsense - Points&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
+              <span style="color: #f92672">&quot;renderer&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;3d&quot;</span><span style="color: #f8f8f2">,</span>
               <span style="color: #f92672">&quot;dims&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
-                <span style="color: #f92672">&quot;width&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">600</span><span style="color: #f8f8f2">,</span>
-                <span style="color: #f92672">&quot;height&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">600</span>
+                <span style="color: #f92672">&quot;width&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">640</span><span style="color: #f8f8f2">,</span>
+                <span style="color: #f92672">&quot;height&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">480</span>
               <span style="color: #f8f8f2">},</span>
               <span style="color: #f92672">&quot;channels&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">[</span>
                 <span style="color: #f8f8f2">{</span>
-                  <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;imu/imu/imu_corrector/BiasLinearAcceleration.x&quot;</span>
-                <span style="color: #f8f8f2">},</span>
-                <span style="color: #f8f8f2">{</span>
-                  <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;imu/imu/imu_corrector/BiasLinearAcceleration.y&quot;</span>
-                <span style="color: #f8f8f2">},</span>
-                <span style="color: #f8f8f2">{</span>
-                  <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;imu/imu/imu_corrector/BiasLinearAcceleration.z&quot;</span>
-                <span style="color: #f8f8f2">}</span>
-              <span style="color: #f8f8f2">]</span>
-            <span style="color: #f8f8f2">},</span>
-            <span style="color: #f92672">&quot;imu - BiasAngularVelocity&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
-              <span style="color: #f92672">&quot;renderer&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;plot&quot;</span><span style="color: #f8f8f2">,</span>
-              <span style="color: #f92672">&quot;dims&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
-                <span style="color: #f92672">&quot;width&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">600</span><span style="color: #f8f8f2">,</span>
-                <span style="color: #f92672">&quot;height&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">600</span>
-              <span style="color: #f8f8f2">},</span>
-              <span style="color: #f92672">&quot;channels&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">[</span>
-                <span style="color: #f8f8f2">{</span>
-                  <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;imu/imu/imu_corrector/BiasAngularVelocity.x&quot;</span>
-                <span style="color: #f8f8f2">},</span>
-                <span style="color: #f8f8f2">{</span>
-                  <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;imu/imu/imu_corrector/BiasAngularVelocity.y&quot;</span>
-                <span style="color: #f8f8f2">},</span>
-                <span style="color: #f8f8f2">{</span>
-                  <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;imu/imu/imu_corrector/BiasAngularVelocity.z&quot;</span>
+                  <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;realsense_camera/point_cloud/viewer/points&quot;</span>
                 <span style="color: #f8f8f2">}</span>
               <span style="color: #f8f8f2">]</span>
             <span style="color: #f8f8f2">}</span>
-          <span style="color: #f8f8f2">}</span>
+          <span style="color: #f8f8f2">},</span>
+          <span style="color: #f92672">&quot;assets&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{}</span>
         <span style="color: #f8f8f2">}</span>
       <span style="color: #f8f8f2">}</span>
-    <span style="color: #f8f8f2">}</span>
+ <span style="color: #f8f8f2">}</span>
   <span style="color: #f8f8f2">},</span>
   <span style="color: #f92672">&quot;graph&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">{</span>
     <span style="color: #f92672">&quot;nodes&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">[</span>
       <span style="color: #f8f8f2">{</span>
-        <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;imu&quot;</span><span style="color: #f8f8f2">,</span>
+        <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;camera&quot;</span><span style="color: #f8f8f2">,</span>
         <span style="color: #f92672">&quot;components&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">[</span>
           <span style="color: #f8f8f2">{</span>
             <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;message_ledger&quot;</span><span style="color: #f8f8f2">,</span>
             <span style="color: #f92672">&quot;type&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;isaac::alice::MessageLedger&quot;</span>
           <span style="color: #f8f8f2">},</span>
           <span style="color: #f8f8f2">{</span>
-            <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;iio_bmi160&quot;</span><span style="color: #f8f8f2">,</span>
-            <span style="color: #f92672">&quot;type&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;isaac::imu::IioBmi160&quot;</span>
+            <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;realsense&quot;</span><span style="color: #f8f8f2">,</span>
+            <span style="color: #f92672">&quot;type&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;isaac::RealsenseCamera&quot;</span>
+          <span style="color: #f8f8f2">}</span>
+        <span style="color: #f8f8f2">]</span>
+      <span style="color: #f8f8f2">},</span>
+      <span style="color: #f8f8f2">{</span>
+        <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;viewer&quot;</span><span style="color: #f8f8f2">,</span>
+        <span style="color: #f92672">&quot;components&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">[</span>
+          <span style="color: #f8f8f2">{</span>
+            <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;message_ledger&quot;</span><span style="color: #f8f8f2">,</span>
+            <span style="color: #f92672">&quot;type&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;isaac::alice::MessageLedger&quot;</span>
           <span style="color: #f8f8f2">},</span>
           <span style="color: #f8f8f2">{</span>
-            <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;imu_corrector&quot;</span><span style="color: #f8f8f2">,</span>
-            <span style="color: #f92672">&quot;type&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;isaac::imu::ImuCorrector&quot;</span>
+            <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;depth&quot;</span><span style="color: #f8f8f2">,</span>
+            <span style="color: #f92672">&quot;type&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;isaac::viewers::DepthCameraViewer&quot;</span>
+          <span style="color: #f8f8f2">},</span>
+          <span style="color: #f8f8f2">{</span>
+            <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;color&quot;</span><span style="color: #f8f8f2">,</span>
+            <span style="color: #f92672">&quot;type&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;isaac::viewers::ImageViewer&quot;</span>
+          <span style="color: #f8f8f2">},</span>
+          <span style="color: #f8f8f2">{</span>
+            <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;left_ir&quot;</span><span style="color: #f8f8f2">,</span>
+            <span style="color: #f92672">&quot;type&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;isaac::viewers::ImageViewer&quot;</span>
+          <span style="color: #f8f8f2">},</span>
+          <span style="color: #f8f8f2">{</span>
+            <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;right_ir&quot;</span><span style="color: #f8f8f2">,</span>
+            <span style="color: #f92672">&quot;type&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;isaac::viewers::ImageViewer&quot;</span>
+          <span style="color: #f8f8f2">}</span>
+        <span style="color: #f8f8f2">]</span>
+      <span style="color: #f8f8f2">},</span>
+      <span style="color: #f8f8f2">{</span>
+        <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;point_cloud&quot;</span><span style="color: #f8f8f2">,</span>
+        <span style="color: #f92672">&quot;components&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">[</span>
+          <span style="color: #f8f8f2">{</span>
+            <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;message_ledger&quot;</span><span style="color: #f8f8f2">,</span>
+            <span style="color: #f92672">&quot;type&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;isaac::alice::MessageLedger&quot;</span>
+          <span style="color: #f8f8f2">},</span>
+          <span style="color: #f8f8f2">{</span>
+            <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;depth_to_pointcloud&quot;</span><span style="color: #f8f8f2">,</span>
+            <span style="color: #f92672">&quot;type&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;isaac::rgbd_processing::DepthImageToPointCloud&quot;</span>
+          <span style="color: #f8f8f2">},</span>
+          <span style="color: #f8f8f2">{</span>
+            <span style="color: #f92672">&quot;name&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;viewer&quot;</span><span style="color: #f8f8f2">,</span>
+            <span style="color: #f92672">&quot;type&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;isaac::viewers::PointCloudViewer&quot;</span>
           <span style="color: #f8f8f2">}</span>
         <span style="color: #f8f8f2">]</span>
       <span style="color: #f8f8f2">}</span>
     <span style="color: #f8f8f2">],</span>
     <span style="color: #f92672">&quot;edges&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">[</span>
       <span style="color: #f8f8f2">{</span>
-        <span style="color: #f92672">&quot;source&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;imu/iio_bmi160/imu_raw&quot;</span><span style="color: #f8f8f2">,</span>
-        <span style="color: #f92672">&quot;target&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;imu/imu_corrector/raw&quot;</span>
+        <span style="color: #f92672">&quot;source&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;camera/realsense/depth&quot;</span><span style="color: #f8f8f2">,</span>
+        <span style="color: #f92672">&quot;target&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;viewer/depth/depth&quot;</span>
+      <span style="color: #f8f8f2">},</span>
+      <span style="color: #f8f8f2">{</span>
+        <span style="color: #f92672">&quot;source&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;camera/realsense/depth_intrinsics&quot;</span><span style="color: #f8f8f2">,</span>
+        <span style="color: #f92672">&quot;target&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;viewer/depth/intrinsics&quot;</span>
+      <span style="color: #f8f8f2">},</span>
+      <span style="color: #f8f8f2">{</span>
+        <span style="color: #f92672">&quot;source&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;camera/realsense/color&quot;</span><span style="color: #f8f8f2">,</span>
+        <span style="color: #f92672">&quot;target&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;viewer/color/image&quot;</span>
+      <span style="color: #f8f8f2">},</span>
+      <span style="color: #f8f8f2">{</span>
+        <span style="color: #f92672">&quot;source&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;camera/realsense/left_ir&quot;</span><span style="color: #f8f8f2">,</span>
+        <span style="color: #f92672">&quot;target&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;viewer/left_ir/image&quot;</span>
+      <span style="color: #f8f8f2">},</span>
+      <span style="color: #f8f8f2">{</span>
+        <span style="color: #f92672">&quot;source&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;camera/realsense/right_ir&quot;</span><span style="color: #f8f8f2">,</span>
+        <span style="color: #f92672">&quot;target&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;viewer/right_ir/image&quot;</span>
+      <span style="color: #f8f8f2">},</span>
+      <span style="color: #f8f8f2">{</span>
+        <span style="color: #f92672">&quot;source&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;camera/realsense/depth&quot;</span><span style="color: #f8f8f2">,</span>
+        <span style="color: #f92672">&quot;target&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;point_cloud/depth_to_pointcloud/depth&quot;</span>
+      <span style="color: #f8f8f2">},</span>
+      <span style="color: #f8f8f2">{</span>
+        <span style="color: #f92672">&quot;source&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;camera/realsense/depth_intrinsics&quot;</span><span style="color: #f8f8f2">,</span>
+        <span style="color: #f92672">&quot;target&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;point_cloud/depth_to_pointcloud/intrinsics&quot;</span>
+      <span style="color: #f8f8f2">},</span>
+      <span style="color: #f8f8f2">{</span>
+        <span style="color: #f92672">&quot;source&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;camera/realsense/color&quot;</span><span style="color: #f8f8f2">,</span>
+        <span style="color: #f92672">&quot;target&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;point_cloud/depth_to_pointcloud/color&quot;</span>
+      <span style="color: #f8f8f2">},</span>
+      <span style="color: #f8f8f2">{</span>
+        <span style="color: #f92672">&quot;source&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;point_cloud/depth_to_pointcloud/cloud&quot;</span><span style="color: #f8f8f2">,</span>
+        <span style="color: #f92672">&quot;target&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;point_cloud/viewer/cloud&quot;</span>
       <span style="color: #f8f8f2">}</span>
     <span style="color: #f8f8f2">]</span>
   <span style="color: #f8f8f2">}</span>
 <span style="color: #f8f8f2">}</span>
 </code></pre></div>
-</td></tr></table>
+</td></tr></table></p>
                 
               
               
@@ -999,7 +1100,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="フッター">
       
-        <a href="../02.imu/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../03.imu-caliburation/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1014,13 +1115,13 @@
         </a>
       
       
-        <a href="../04.realsense/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../../04.Kaya/01.joystick/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 次
               </span>
-              Realsense
+              joystick
             </div>
           </div>
           <div class="md-footer__button md-icon">
