@@ -14,7 +14,7 @@
     
     
       
-        <title>Hardware Setting - FaBo Kaya Docs</title>
+        <title>シリアルサーボの設定 - FaBo Kaya Docs</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#hardware-setting" class="md-skip">
+        <a href="#_1" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Hardware Setting
+              シリアルサーボの設定
             
           </span>
         </div>
@@ -185,12 +185,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       <label class="md-nav__link" for="__nav_3">
         00.Build
@@ -208,76 +210,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../00.Build/01.bom/" class="md-nav__link">
+      <a href="../01.bom/" class="md-nav__link">
         BOM
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../00.Build/02.servo/" class="md-nav__link">
-        シリアルサーボの設定
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-    
-  
-  
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
-      
-      <label class="md-nav__link" for="__nav_4">
-        01.Setting
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="01.Setting" data-md-level="1">
-        <label class="md-nav__title" for="__nav_4">
-          <span class="md-nav__icon md-icon"></span>
-          01.Setting
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../01.desktop/" class="md-nav__link">
-        連携Desktopの環境構築
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../02.jetson/" class="md-nav__link">
-        Jetson Nano 4GBの設定
       </a>
     </li>
   
@@ -297,12 +231,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Hardware Setting
+          シリアルサーボの設定
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Hardware Setting
+        シリアルサーボの設定
       </a>
       
         
@@ -319,8 +253,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dynamixel" class="md-nav__link">
-    Dynamixel
+  <a href="#dynamixel-wizard" class="md-nav__link">
+    Dynamixel Wizard
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#id" class="md-nav__link">
+    IDを設定する
   </a>
   
 </li>
@@ -333,12 +274,78 @@
   
 
           
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        01.Setting
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="01.Setting" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          01.Setting
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
             
   
   
   
     <li class="md-nav__item">
-      <a href="../04.power/" class="md-nav__link">
+      <a href="../../01.Setting/01.desktop/" class="md-nav__link">
+        連携Desktopの環境構築
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01.Setting/02.jetson/" class="md-nav__link">
+        Jetson Nano 4GBの設定
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01.Setting/03.hardware/" class="md-nav__link">
+        Hardware Setting
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01.Setting/04.power/" class="md-nav__link">
         電力モード
       </a>
     </li>
@@ -538,8 +545,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dynamixel" class="md-nav__link">
-    Dynamixel
+  <a href="#dynamixel-wizard" class="md-nav__link">
+    Dynamixel Wizard
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#id" class="md-nav__link">
+    IDを設定する
   </a>
   
 </li>
@@ -557,10 +571,22 @@
               
                 
                 
-                <h1 id="hardware-setting">Hardware Setting</h1>
-<h2 id="dynamixel">Dynamixel</h2>
+                <h1 id="_1">シリアルサーボの設定</h1>
+<p>Dynamixel Wizardを使って、サーボのIDを設定します(必須)。</p>
+<h2 id="dynamixel-wizard">Dynamixel Wizard</h2>
+<p>Dynamixel Wizardは、Robotis社のDynamixelのID管理や操作が可能なツールです。Windows, Linux, Mac版があります。</p>
 <p><a href="https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/">https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/</a></p>
-<p>から、Dynamixel Wizardをダウンロードする。</p>
+<p>より、Dynamixel Wizard 2.0をダウンロードし、インストールします。</p>
+<p><img alt="" src="../img/wizard001.jpg" /></p>
+<h2 id="id">IDを設定する</h2>
+<p>U2D2とU2D2 Power Hub Boardを接続し、DCコネクターを接続し、電源をOnにします。
+この状態で、U2D2とPCを接続し、Dynamixel Wizard 2.0を起動します。</p>
+<p>Scanには、時間がかかるので、検索対象をOptionで絞り込みます。</p>
+<p><img alt="" src="../img/wizard002.jpg" /></p>
+<p>IDを設定したいサーボを接続し、Scanします。IDに重複があるとScanに失敗するので、設定では1つのサーボのみ接続します。</p>
+<p><img alt="" src="../img/wizard003.jpg" /></p>
+<p>発見したサーボのIDを設定します。</p>
+<p><img alt="" src="../img/wizard004.jpg" /></p>
                 
               
               
@@ -578,7 +604,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="フッター">
       
-        <a href="../02.jetson/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../01.bom/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -587,19 +613,19 @@
               <span class="md-footer__direction">
                 前
               </span>
-              Jetson Nano 4GBの設定
+              BOM
             </div>
           </div>
         </a>
       
       
-        <a href="../04.power/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../../01.Setting/01.desktop/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 次
               </span>
-              電力モード
+              連携Desktopの環境構築
             </div>
           </div>
           <div class="md-footer__button md-icon">
