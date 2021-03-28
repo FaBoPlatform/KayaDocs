@@ -14,7 +14,7 @@
     
     
       
-        <title>Jetson Nano 4GBの設定 - FaBo Kaya Docs</title>
+        <title>電力モード - FaBo Kaya Docs</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#jetson-nano-4gb" class="md-skip">
+        <a href="#_1" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Jetson Nano 4GBの設定
+              電力モード
             
           </span>
         </div>
@@ -466,6 +466,30 @@
             
   
   
+  
+    <li class="md-nav__item">
+      <a href="../04.jetson1/" class="md-nav__link">
+        Jetson Nano 4GBの設定
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05.jetson2/" class="md-nav__link">
+        Jetson Nano必要パッケージのインストール
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
     
   
   
@@ -477,12 +501,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Jetson Nano 4GBの設定
+          電力モード
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Jetson Nano 4GBの設定
+        電力モード
       </a>
       
         
@@ -499,29 +523,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#jetpack" class="md-nav__link">
-    対応JetPack
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#jetpack-sdk-441" class="md-nav__link">
-    JetPack SDK 4.4.1のダウンロード
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ssh" class="md-nav__link">
-    SSHの設定
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dependency" class="md-nav__link">
-    Dependencyの解消
+  <a href="#_2" class="md-nav__link">
+    標準モード
   </a>
   
 </li>
@@ -530,18 +533,6 @@
   
 </nav>
       
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../05.power/" class="md-nav__link">
-        電力モード
-      </a>
     </li>
   
 
@@ -739,29 +730,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#jetpack" class="md-nav__link">
-    対応JetPack
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#jetpack-sdk-441" class="md-nav__link">
-    JetPack SDK 4.4.1のダウンロード
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ssh" class="md-nav__link">
-    SSHの設定
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dependency" class="md-nav__link">
-    Dependencyの解消
+  <a href="#_2" class="md-nav__link">
+    標準モード
   </a>
   
 </li>
@@ -779,20 +749,11 @@
               
                 
                 
-                <h1 id="jetson-nano-4gb">Jetson Nano 4GBの設定</h1>
-<h2 id="jetpack">対応JetPack</h2>
-<p>Kayaに対応しているJetPackのVersionは、4.4.1以降になります。</p>
-<h2 id="jetpack-sdk-441">JetPack SDK 4.4.1のダウンロード</h2>
-<p><a href="https://developer.nvidia.com/jetpack-sdk-441-archive">https://developer.nvidia.com/jetpack-sdk-441-archive</a> からJetson Nano 4GB用のJetpack 4.4.1のイメージをダウンロードします。</p>
-<h2 id="ssh">SSHの設定</h2>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">ssh-kodegen</span>
-</code></pre></div>
-</td></tr></table>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">sudo apt install openssh</span>
-</code></pre></div>
-</td></tr></table>
-<h2 id="dependency">Dependencyの解消</h2>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">./engine/build/scripts/install_dependencies_jetson.sh -h &lt;jetson_ip&gt; -u &lt;jetson_username&gt;</span>
+                <h1 id="_1">電力モード</h1>
+<h2 id="_2">標準モード</h2>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">sudo nvpmodel -m 0</span>
+<span style="color: #66d9ef">sudo nvpmodel -q</span>
 </code></pre></div>
 </td></tr></table>
                 
@@ -812,7 +773,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="フッター">
       
-        <a href="../03.desktop/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../05.jetson2/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -821,19 +782,19 @@
               <span class="md-footer__direction">
                 前
               </span>
-              連携Desktopの環境構築
+              Jetson Nano必要パッケージのインストール
             </div>
           </div>
         </a>
       
       
-        <a href="../05.power/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../../05.Tutorial/01.ping/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 次
               </span>
-              電力モード
+              Ping_Python
             </div>
           </div>
           <div class="md-footer__button md-icon">
