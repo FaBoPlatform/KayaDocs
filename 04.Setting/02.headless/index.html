@@ -14,7 +14,7 @@
     
     
       
-        <title>電力モード - FaBo Kaya Docs</title>
+        <title>ヘッドレスモードで接続 - FaBo Kaya Docs</title>
       
     
     
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              電力モード
+              ヘッドレスモードで接続
             
           </span>
         </div>
@@ -420,44 +420,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../00.headless/" class="md-nav__link">
-        ヘッドレスモードで接続
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../01.desktop/" class="md-nav__link">
-        連携Desktopの環境構築
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../02.jetson/" class="md-nav__link">
-        Jetson Nano 4GBの設定
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../03.hardware/" class="md-nav__link">
-        Hardware Setting
+      <a href="../01.on/" class="md-nav__link">
+        電源のOn
       </a>
     </li>
   
@@ -477,12 +441,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          電力モード
+          ヘッドレスモードで接続
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        電力モード
+        ヘッドレスモードで接続
       </a>
       
         
@@ -499,8 +463,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    標準モード
+  <a href="#usb" class="md-nav__link">
+    USBケーブルを使用してヘッドレスモードで接続
   </a>
   
 </li>
@@ -509,6 +473,54 @@
   
 </nav>
       
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03.desktop/" class="md-nav__link">
+        連携Desktopの環境構築
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04.jetson/" class="md-nav__link">
+        Jetson Nano 4GBの設定
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05.hardware/" class="md-nav__link">
+        Hardware Setting
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06.power/" class="md-nav__link">
+        電力モード
+      </a>
     </li>
   
 
@@ -706,8 +718,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    標準モード
+  <a href="#usb" class="md-nav__link">
+    USBケーブルを使用してヘッドレスモードで接続
   </a>
   
 </li>
@@ -725,13 +737,13 @@
               
                 
                 
-                <h1 id="_1">電力モード</h1>
-<h2 id="_2">標準モード</h2>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">sudo nvpmodel -m 0</span>
-<span style="color: #66d9ef">sudo nvpmodel -q</span>
-</code></pre></div>
-</td></tr></table>
+                <h1 id="_1">ヘッドレスモードで接続</h1>
+<ul>
+<li>方法1: HDMIケーブルでDisplayに接続</li>
+<li>方法2: USBケーブルを使用してヘッドレスモードで接続</li>
+</ul>
+<h2 id="usb">USBケーブルを使用してヘッドレスモードで接続</h2>
+<p><img alt="" src="../img/headless001.jpg" /></p>
                 
               
               
@@ -749,7 +761,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="フッター">
       
-        <a href="../03.hardware/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../01.on/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -758,19 +770,19 @@
               <span class="md-footer__direction">
                 前
               </span>
-              Hardware Setting
+              電源のOn
             </div>
           </div>
         </a>
       
       
-        <a href="../../05.Tutorial/01.ping/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../03.desktop/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 次
               </span>
-              Ping_Python
+              連携Desktopの環境構築
             </div>
           </div>
           <div class="md-footer__button md-icon">
