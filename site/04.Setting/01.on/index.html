@@ -14,7 +14,7 @@
     
     
       
-        <title>連携Desktopの環境構築 - FaBo Kaya Docs</title>
+        <title>電源のOn - FaBo Kaya Docs</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#desktop" class="md-skip">
+        <a href="#on" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              連携Desktopの環境構築
+              電源のOn
             
           </span>
         </div>
@@ -359,6 +359,42 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03.Make/07.build07/" class="md-nav__link">
+        組み立て(Joystickの接続)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03.Make/08.build08/" class="md-nav__link">
+        組み立て(SD)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03.Make/09.build09/" class="md-nav__link">
+        組み立て(Guard)
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -405,12 +441,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          連携Desktopの環境構築
+          電源のOn
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        連携Desktopの環境構築
+        電源のOn
       </a>
       
         
@@ -427,15 +463,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#isaac-sdk" class="md-nav__link">
-    Isaac SDKのダウンロード
+  <a href="#on_1" class="md-nav__link">
+    電源のOn
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    依存の解消
+  <a href="#on_2" class="md-nav__link">
+    サーボのスイッチをOn
   </a>
   
 </li>
@@ -453,7 +489,31 @@
   
   
     <li class="md-nav__item">
-      <a href="../02.jetson/" class="md-nav__link">
+      <a href="../02.headless/" class="md-nav__link">
+        ヘッドレスモードで接続
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03.desktop/" class="md-nav__link">
+        連携Desktopの環境構築
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04.jetson1/" class="md-nav__link">
         Jetson Nano 4GBの設定
       </a>
     </li>
@@ -465,8 +525,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../03.hardware/" class="md-nav__link">
-        Hardware Setting
+      <a href="../05.jetson2/" class="md-nav__link">
+        Jetson Nano必要パッケージのインストール
       </a>
     </li>
   
@@ -477,7 +537,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../04.power/" class="md-nav__link">
+      <a href="../06.power/" class="md-nav__link">
         電力モード
       </a>
     </li>
@@ -677,15 +737,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#isaac-sdk" class="md-nav__link">
-    Isaac SDKのダウンロード
+  <a href="#on_1" class="md-nav__link">
+    電源のOn
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    依存の解消
+  <a href="#on_2" class="md-nav__link">
+    サーボのスイッチをOn
   </a>
   
 </li>
@@ -703,13 +763,13 @@
               
                 
                 
-                <h1 id="desktop">連携Desktopの環境構築</h1>
-<h2 id="isaac-sdk">Isaac SDKのダウンロード</h2>
-<p><a href="https://developer.nvidia.com/isaac/downloads">https://developer.nvidia.com/isaac/downloads</a> のページからSDKをダウンロードしてきます。</p>
-<h2 id="_1">依存の解消</h2>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">./engine/build/scripts/install_dependencies.sh</span>
-</code></pre></div>
-</td></tr></table>
+                <h1 id="on">電源のOn</h1>
+<h2 id="on_1">電源のOn</h2>
+<p>前方下の配線を接続します。Jetson NanoとServo向けの電源供給が始まります。</p>
+<p><img alt="" src="../img/on001.jpg" /></p>
+<h2 id="on_2">サーボのスイッチをOn</h2>
+<p>スイッチをOnにすると、サーボへの電流が流れ始めます。</p>
+<p><img alt="" src="../img/on002.jpg" /></p>
                 
               
               
@@ -727,7 +787,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="フッター">
       
-        <a href="../../03.Make/06.build06/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../../03.Make/09.build09/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -736,19 +796,19 @@
               <span class="md-footer__direction">
                 前
               </span>
-              組み立て(配線等)
+              組み立て(Guard)
             </div>
           </div>
         </a>
       
       
-        <a href="../02.jetson/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../02.headless/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 次
               </span>
-              Jetson Nano 4GBの設定
+              ヘッドレスモードで接続
             </div>
           </div>
           <div class="md-footer__button md-icon">
